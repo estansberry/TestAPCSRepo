@@ -6,12 +6,7 @@ public class Demo{
       firstArg = 5;
     }
     printLoop(firstArg);
-    int[] a = {1, 2, 3};
-    int[] b = {4, 2};
-    int[] c = {4, 6, 6, 7, 4, 0};
-    int[] d = {9, 2, 0, 0};
-    int[] e = {3, 1, -3, -5, 100};
-    int[][] f = {{1, 2, 3}, {4, 6}, {7, 0, 0, 0}, {9}};
+
 
   }
   public static void printLoop(int n){
