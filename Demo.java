@@ -6,6 +6,20 @@ public class Demo{
       firstArg = 5;
     }
     printLoop(firstArg);
+    int[] a = {1, 2, 3};
+    int[] b = {4, 2};
+    int[] c = {4, 6, 6, 7, 4, 0};
+    int[] d = {9, 2, 0, 0};
+    int[] e = {3, 1, -3, -5, 100};
+    int[][] f = {{1, 2, 3}, {4, 6}, {7, 0, 0, 0}, {9}};
+    System.out.println(arrToString(a));
+    System.out.println(arrToString(b));
+    System.out.println(arrToString(c));
+    System.out.println(arrToString(d));
+    System.out.println(arrToString(e));
+    System.out.println(arrayDeepToString(f));
+    System.out.println(arrayDeepToString(create2DArray(5, 4, 5)));
+    System.out.println(arrayDeepToString(create2DArrayRandomized(4, 10, 100)));
   }
   public static void printLoop(int n){
     for(int i = 0; i < n; i ++){
@@ -14,4 +28,49 @@ public class Demo{
       }System.out.println("");
       }
     }
+  public static String arrToString(int[] arr){
+    String newstr = "{";
+    if (arr.length == 0){
+      return("{}");
+    }
+    for (int i = 0; i < arr.length - 1; i ++){
+      newstr = newstr + arr[i];
+      newstr = newstr + ", ";
+    }newstr = newstr + arr[arr.length - 1] + "}";
+      return(newstr);
+  }
+  public static String arrayDeepToString(int[][] arr){
+    String newstr = "{";
+    if (arr.length == 0){
+      return("{}");
+    }
+    for (int i = 0; i < arr.length - 1; i ++){
+      newstr = newstr + arrToString(arr[i]);
+      newstr = newstr + ", ";
+    }newstr = newstr + arrToString(arr[arr.length - 1]) + "}";
+      return(newstr);
+  }
+
+    public static int[][] create2DArray (int rows, int cols, int maxValue){
+      int[][] newarr;
+      newarr = new int[rows][cols];
+      for(int i = 0; i < rows; i ++){
+        for(int j = 0; j < cols; j ++){
+          int newval = (int) Math.floor(Math.random() * (maxValue + 1));
+          newarr[i][j] = newval;
+        }
+      }return(newarr);
+  }
+    public static int[][] create2DArrayRandomized (int rows, int cols, int maxValue){
+      int[][] newarr;
+      int columns = (int) Math.floor(Math.random() * (cols + 1));
+      newarr = new int[rows][columns];
+      for(int i = 0; i < rows; i ++){
+        for(int j = 0; j < columns; j ++){
+          int newval = (int) Math.floor(Math.random() * (maxValue + 1));
+          newarr[i][j] = newval;
+        }
+      }return(newarr);
+    }
+
 }
