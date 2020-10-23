@@ -12,14 +12,7 @@ public class Demo{
     int[] d = {9, 2, 0, 0};
     int[] e = {3, 1, -3, -5, 100};
     int[][] f = {{1, 2, 3}, {4, 6}, {7, 0, 0, 0}, {9}};
-    System.out.println(arrToString(a));
-    System.out.println(arrToString(b));
-    System.out.println(arrToString(c));
-    System.out.println(arrToString(d));
-    System.out.println(arrToString(e));
-    System.out.println(arrayDeepToString(f));
-    System.out.println(arrayDeepToString(create2DArray(5, 4, 5)));
-    System.out.println(arrayDeepToString(create2DArrayRandomized(4, 10, 100)));
+
   }
   public static void printLoop(int n){
     for(int i = 0; i < n; i ++){
